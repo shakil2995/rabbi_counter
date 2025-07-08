@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>⏳ Rabbi’s Freedom Countdown</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      font-family: 'Ubuntu', sans-serif;
+      color: #4a0033;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+.hero-image {
+  width: 200px;
+  height: auto;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  border: 5px solid #ff006e;
+  box-shadow: 0 0 30px rgba(255, 0, 100, 0.5);
+  animation: float 3s ease-in-out infinite, funkyRotate 6s ease-in-out infinite;
+}
+
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 30px;
+      color: #7b113a;
+      animation: popIn 1s ease;
+      position: relative;
+    }
+
+    h1::after {
+      content: "🥁🎊💃";
+      position: absolute;
+      right: -60px;
+      top: -20px;
+      font-size: 0.6em;
+      animation: bounce 1s infinite alternate;
+    }
+
+    .countdown-box {
+      background: #fff0f5;
+      padding: 30px 50px;
+      border-radius: 30px;
+      font-size: 4.5em;
+      font-weight: bold;
+      color: #d0006f;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border: 4px dashed #ff69b4;
+      animation: pulse 2s infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .countdown-box:hover {
+      transform: scale(1.05) rotate(-1deg);
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 1.4em;
+      color: #5e005e;
+      font-style: italic;
+      animation: wiggle 2s infinite;
+    }
+
+    /* Decorative Confetti */
+    .confetti {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('https://cdn.jsdelivr.net/gh/raihan2002/fun-confetti/confetti.svg');
+      background-repeat: repeat;
+      background-size: 200px;
+      opacity: 0.2;
+      animation: confettiMove 10s linear infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes wiggle {
+      0% { transform: rotate(-1deg); }
+      50% { transform: rotate(1deg); }
+      100% { transform: rotate(-1deg); }
+    }
+
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    @keyframes confettiMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 1000px; }
+    }
+@keyframes funkyRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="confetti"></div>
+
+  <img src="img1.jpg" alt="Rabbi's Countdown" class="hero-image">
+
+  <h1>💍 Rabbi, your freedom expires in...</h1>
+
+  <div class="countdown-box" id="countdown">
+    Calculating your doom...
+  </div>
+
+  <div class="footer">ভাগো রাব্বি, ভাগোওওও...! 🏃‍♂️🔥💨
+</div>
+
+<script>
+  let targetTime;
+
+  async function fetchTargetTime() {
+    const res = await fetch('/api/target-time');
+    const data = await res.json();
+    targetTime = data.target;
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+
+  function updateCountdown() {
+    const now = Date.now();
+    const diff = targetTime - now;
+
+    const countdownEl = document.getElementById('countdown');
+    if (diff <= 0) {
+      countdownEl.innerText = "💥 Too late, Rabbi!!! 😅";
+      return;
+    }
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    countdownEl.innerText = `${hours}h : ${minutes}m : ${seconds}s`;
+  }
+
+  fetchTargetTime();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  setInterval(() => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  }, 5000); // burst every 5 seconds
+</script>
+
+</body>
+</html>
