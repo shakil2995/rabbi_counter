@@ -2,293 +2,238 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>⏳ Rabbi’s Freedom Countdown</title>
+  <title>💍 Rabbi’s Freedom Countdown - Game Over</title>
   <style>
- @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-  font-family: 'Ubuntu', sans-serif;
-  color: #4a0033;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  padding: 20px;
-  overflow-x: hidden;
-  overflow-y: auto; /* allow vertical scroll if needed */
-}
+    body {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      font-family: 'Ubuntu', sans-serif;
+      color: #4a0033;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
 
-.hero-image {
-  width: 200px;
-  height: auto;
-  margin-bottom: 30px;
-  border-radius: 50%;
-  border: 5px solid #ff006e;
-  box-shadow: 0 0 30px rgba(255, 0, 100, 0.5);
-  animation: float 3s ease-in-out infinite, funkyRotate 6s ease-in-out infinite;
-}
+    .hero-image {
+      width: 200px;
+      height: auto;
+      margin-bottom: 30px;
+      border-radius: 50%;
+      border: 5px solid #ff006e;
+      box-shadow: 0 0 30px rgba(255, 0, 100, 0.5);
+      animation: float 3s ease-in-out infinite, funkyRotate 6s ease-in-out infinite;
+    }
 
-h1 {
-  font-size: 3em;
-  margin-bottom: 30px;
-  color: #7b113a;
-  animation: popIn 1s ease;
-  position: relative;
-  padding: 0 10px;
-}
+    h1 {
+      font-size: 3em;
+      margin-bottom: 30px;
+      color: #7b113a;
+      animation: popIn 1s ease;
+      position: relative;
+      padding: 0 10px;
+    }
 
-h1::after {
-  content: "🥁🎊💃";
-  position: absolute;
-  right: -60px;
-  top: -20px;
-  font-size: 0.6em;
-  animation: bounce 1s infinite alternate;
-}
+    h1::after {
+      content: "💥🎊🎉";
+      position: absolute;
+      right: -60px;
+      top: -20px;
+      font-size: 0.6em;
+      animation: bounce 1s infinite alternate;
+    }
 
-.countdown-box {
-  background: #fff0f5;
-  padding: 30px 50px;
-  border-radius: 30px;
-  font-size: 4.5em;
-  font-weight: bold;
-  color: #d0006f;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  border: 4px dashed #ff69b4;
-  animation: pulse 2s infinite;
-  transition: transform 0.3s ease;
-  max-width: 90vw;
-  word-break: break-word;
-}
+    .countdown-box {
+      background: #fff0f5;
+      padding: 30px 50px;
+      border-radius: 30px;
+      font-size: 3em;
+      font-weight: bold;
+      color: #d0006f;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border: 4px dashed #ff69b4;
+      animation: pulse 2s infinite;
+      transition: transform 0.3s ease;
+      max-width: 90vw;
+      word-break: break-word;
+    }
 
-.countdown-box:hover {
-  transform: scale(1.05) rotate(-1deg);
-}
+    .countdown-box:hover {
+      transform: scale(1.05) rotate(-1deg);
+    }
 
-.footer {
-  margin-top: 40px;
-  font-size: 1.4em;
-  color: #5e005e;
-  font-style: italic;
-  animation: wiggle 2s infinite;
-  padding: 0 10px;
-}
+    .footer {
+      margin-top: 40px;
+      font-size: 1.4em;
+      color: #5e005e;
+      font-style: italic;
+      animation: wiggle 2s infinite;
+      padding: 0 10px;
+    }
 
-.quote {
-  margin-top: 20px;
-  font-size: 1.8em;
-  font-weight: 600;
-  color: #880044;
-  background: rgba(255, 192, 203, 0.3);
-  padding: 15px 25px;
-  border-left: 5px solid #ff007f;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(255, 0, 119, 0.2);
-  animation: fadeInUp 1.5s ease-out;
-  max-width: 90vw;
-}
+    .quote {
+      margin-top: 20px;
+      font-size: 1.8em;
+      font-weight: 600;
+      color: #880044;
+      background: rgba(255, 192, 203, 0.3);
+      padding: 15px 25px;
+      border-left: 5px solid #ff007f;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(255, 0, 119, 0.2);
+      animation: fadeInUp 1.5s ease-out;
+      max-width: 90vw;
+    }
 
-.quote-author {
-  display: block;
-  font-size: 1.1em;
-  margin-top: 10px;
-  font-style: italic;
-  color: #5e0033;
-}
+    .quote-author {
+      display: block;
+      font-size: 1.1em;
+      margin-top: 10px;
+      font-style: italic;
+      color: #5e0033;
+    }
 
-/* Confetti */
-.confetti {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-image: url('https://cdn.jsdelivr.net/gh/raihan2002/fun-confetti/confetti.svg');
-  background-repeat: repeat;
-  background-size: 200px;
-  opacity: 0.2;
-  animation: confettiMove 10s linear infinite;
-}
+    .confetti {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: url('https://cdn.jsdelivr.net/gh/raihan2002/fun-confetti/confetti.svg');
+      background-repeat: repeat;
+      background-size: 200px;
+      opacity: 0.2;
+      animation: confettiMove 10s linear infinite;
+    }
 
-/* Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-@keyframes popIn {
-  0% { opacity: 0; transform: scale(0.9); }
-  100% { opacity: 1; transform: scale(1); }
-}
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-@keyframes wiggle {
-  0% { transform: rotate(-1deg); }
-  50% { transform: rotate(1deg); }
-  100% { transform: rotate(-1deg); }
-}
-@keyframes bounce {
-  from { transform: translateY(0); }
-  to { transform: translateY(-10px); }
-}
-@keyframes confettiMove {
-  0% { background-position: 0 0; }
-  100% { background-position: 1000px 1000px; }
-}
-@keyframes funkyRotate {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(90deg); }
-  50% { transform: rotate(180deg); }
-  75% { transform: rotate(270deg); }
-  100% { transform: rotate(360deg); }
-}
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.2em;
-  }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
 
-  .countdown-box {
-    font-size: 2.5em;
-    padding: 20px 30px;
-  }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
 
-  .hero-image {
-    width: 140px;
-  }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
 
-  .footer {
-    font-size: 1.2em;
-  }
+    @keyframes wiggle {
+      0% { transform: rotate(-1deg); }
+      50% { transform: rotate(1deg); }
+      100% { transform: rotate(-1deg); }
+    }
 
-  .quote {
-    font-size: 1.3em;
-    padding: 12px 20px;
-  }
-}
+    @keyframes bounce {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.7em;
-  }
+    @keyframes confettiMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 1000px; }
+    }
 
-  .countdown-box {
-    font-size: 2em;
-    padding: 15px 20px;
-  }
+    @keyframes funkyRotate {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(90deg); }
+      50% { transform: rotate(180deg); }
+      75% { transform: rotate(270deg); }
+      100% { transform: rotate(360deg); }
+    }
 
-  .hero-image {
-    width: 100px;
-  }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.2em; }
+      .countdown-box { font-size: 2.5em; padding: 20px 30px; }
+      .hero-image { width: 140px; }
+      .footer { font-size: 1.2em; }
+      .quote { font-size: 1.3em; padding: 12px 20px; }
+    }
 
-  .quote {
-    font-size: 1.1em;
-    padding: 10px 15px;
-  }
-
-  .quote-author {
-    font-size: 0.9em;
-  }
-
-  .footer {
-    font-size: 1em;
-  }
-}
-
-
+    @media (max-width: 480px) {
+      h1 { font-size: 1.7em; }
+      .countdown-box { font-size: 2em; padding: 15px 20px; }
+      .hero-image { width: 100px; }
+      .quote { font-size: 1.1em; padding: 10px 15px; }
+      .quote-author { font-size: 0.9em; }
+      .footer { font-size: 1em; }
+    }
   </style>
 </head>
 <body>
 
   <div class="confetti"></div>
-<br>
-  <br>
-  <br>
-  <br>
-  <br>
+  <br><br><br><br><br>
+
   <img src="img1.jpg" alt="Rabbi's Countdown" class="hero-image">
 
-  <h1>💍কচি রাব্বি, Your Freedom Expires in...</h1>
+  <h1>🎉 রাব্বি আর কচি নাই... Married Man Alert! 🎊</h1>
 
   <div class="countdown-box" id="countdown">
-    Calculating your doom...
+    💘 It's Official! 🎯
   </div>
 
-  <div class="footer">ভাগো রাব্বি, ভাগোওওও...! 🏃‍♂️🔥💨</div><br>
- <div class="quote">“তোরা আমায় কচি থাকতে দিলিনা”<br><span class="quote-author">— রাব্বি 🥀</span></div>
+  <div class="footer">Welcome to the club, Rabbi! 🕺🍻</div><br>
 
+  <div class="quote">
+    “এখন থেকে হিসাব করে চলিস ভাই!”<br>
+    <span class="quote-author">— বিবাহিত রাব্বি 😌</span>
+  </div>
 
-</div>
-
-<script>
-const targetTime = new Date('2025-07-12T00:00:00').getTime();
-
-function updateCountdown() {
-  const now = Date.now();
-  const diff = targetTime - now;
-
-  const countdownEl = document.getElementById('countdown');
-  if (diff <= 0) {
-    countdownEl.innerText = "💥 Too late, Rabbi!!! 😅";
-    return;
-  }
-
-  const hours = Math.floor(diff / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-  countdownEl.innerText = `${hours}h : ${minutes}m : ${seconds}s`;
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
-
-
-  function updateCountdown() {
-    const now = Date.now();
-    const diff = targetTime - now;
-
+  <script>
     const countdownEl = document.getElementById('countdown');
-    if (diff <= 0) {
-countdownEl.innerText = "🎯 Game Over! Rabbi is no more !!! 😂💘📿";
+    const targetTime = new Date('2025-07-12T00:00:00').getTime();
 
-      return;
+    function updateCountdown() {
+      const now = Date.now();
+      const diff = targetTime - now;
+
+      if (diff <= 0) {
+        countdownEl.innerText = "🎯 Game Over! Rabbi is no more !!! 😂💘📿";
+        return;
+      }
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdownEl.innerText = `${hours}h : ${minutes}m : ${seconds}s`;
     }
 
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 
-    countdownEl.innerText = `${hours}h : ${minutes}m : ${seconds}s`;
-  }
-
-  fetchTargetTime();
-</script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-<script>
-  setInterval(() => {
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 }
-    });
-  }, 5000); // burst every 5 seconds
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    setInterval(() => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }, 5000);
+  </script>
 
 </body>
 </html>
